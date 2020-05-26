@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var string : String? = null
+    var string: String? = null
     val bmi_list = ArrayList<Double>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,32 +28,28 @@ class MainActivity : AppCompatActivity() {
         init()
         click()
 
-        Log.v("test_",""+string?.length)
+        Log.v("test_", "" + string?.length)
     }
 
 
-    private fun init(){
+    private fun init() {
 
-
-        var linearLayoutManager  =  LinearLayoutManager(this)
+        var linearLayoutManager = LinearLayoutManager(this)
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
         rv_bmishow.layoutManager = linearLayoutManager
-
     }
 
-    private fun click(){
-
+    private fun click() {
 
         bt_calculate.setOnClickListener(View.OnClickListener {
             try {
-                val BMI = et_weight.text.toString().toDouble()/Math.pow(et_height.text.toString().toDouble(),2.0)
+                val BMI = et_weight.text.toString().toDouble() / Math.pow(et_height.text.toString().toDouble(), 2.0)
                 bmi_list.add(BMI)
                 dialog(true)
 
                 rv_bmishow.adapter = TestAdaper(bmi_list)
-                rv_bmishow.scrollToPosition(bmi_list.size-1)
-
-            }catch (E : NumberFormatException){
+                rv_bmishow.scrollToPosition(bmi_list.size - 1)
+            } catch (E: NumberFormatException) {
                 dialog(false)
             }
         })
@@ -64,21 +60,20 @@ class MainActivity : AppCompatActivity() {
             et_weight.text.clear()
 
         })
-
     }
-    
 
-    private fun dialog(boolean: Boolean){
+
+    private fun dialog(boolean: Boolean) {
 
         val dialog = AlertDialog.Builder(this)
-        if(boolean){
+        if (boolean) {
             dialog.setTitle("成功")
             dialog.setMessage("請於下方查看BMI")
             dialog.setCancelable(false)
             dialog.setNegativeButton("了解", DialogInterface.OnClickListener { dialog, which ->
                 dialog.dismiss()
             })
-        }else{
+        } else {
             dialog.setTitle("失敗")
             dialog.setMessage("請輸入正確的身高、體重")
             dialog.setCancelable(false)
@@ -88,7 +83,6 @@ class MainActivity : AppCompatActivity() {
             })
         }
         dialog.show()
-
     }
 
     class TestAdaper(var arrayList: ArrayList<Double>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -98,24 +92,23 @@ class MainActivity : AppCompatActivity() {
             Log.v("test_", "onCreateViewHolder")
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_bmi_show, null, false)
             val ViewHolder = ViewHolder(view)
-            return  ViewHolder
+            return ViewHolder
         }
 
         override fun getItemCount(): Int {
             Log.v("test_", "getItemCount")
             return arrayList.size
-
         }
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             Log.v("test_", "onBindViewHolder")
-            val num = position+1
-            val BMI : TextView = holder.itemView.findViewById(R.id.tv_bmi)
-            BMI.setText("第"+num+"次測試："+arrayList[position])
+            val num = position + 1
+            val BMI: TextView = holder.itemView.findViewById(R.id.tv_bmi)
+            BMI.setText("第" + num + "次測試：" + arrayList[position])
         }
     }
 
-    class ViewHolder( itemView: View ) : RecyclerView.ViewHolder(itemView)
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val manager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
