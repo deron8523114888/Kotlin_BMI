@@ -18,55 +18,57 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-
-    val BMI_List = ArrayList<Double>()
+    var string : String? = null
+    val bmi_list = ArrayList<Double>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Init()
-        Click()
+        init()
+        click()
 
+        Log.v("test_",""+string?.length)
     }
 
 
-    private fun Init(){
+    private fun init(){
 
 
         var linearLayoutManager  =  LinearLayoutManager(this)
         linearLayoutManager.orientation = LinearLayoutManager.VERTICAL
-        BMI_RecyclerView.layoutManager = linearLayoutManager
+        rv_bmishow.layoutManager = linearLayoutManager
 
     }
 
-    private fun Click(){
+    private fun click(){
 
 
-        Calculate.setOnClickListener(View.OnClickListener {
+        bt_calculate.setOnClickListener(View.OnClickListener {
             try {
-                val BMI = Edit_Weight.text.toString().toDouble()/Math.pow(Edit_Height.text.toString().toDouble(),2.0)
-                BMI_List.add(BMI)
-                Dialog(true)
-                BMI_RecyclerView.adapter = TestAdaper(BMI_List)
-                BMI_RecyclerView.scrollToPosition(BMI_List.size-1)
+                val BMI = et_weight.text.toString().toDouble()/Math.pow(et_height.text.toString().toDouble(),2.0)
+                bmi_list.add(BMI)
+                dialog(true)
+
+                rv_bmishow.adapter = TestAdaper(bmi_list)
+                rv_bmishow.scrollToPosition(bmi_list.size-1)
 
             }catch (E : NumberFormatException){
-                Dialog(false)
+                dialog(false)
             }
         })
 
 
-        Reset.setOnClickListener(View.OnClickListener {
-            Edit_Height.text.clear()
-            Edit_Weight.text.clear()
+        bt_reset.setOnClickListener(View.OnClickListener {
+            et_height.text.clear()
+            et_weight.text.clear()
 
         })
 
     }
     
 
-    private fun Dialog(boolean: Boolean){
+    private fun dialog(boolean: Boolean){
 
         val dialog = AlertDialog.Builder(this)
         if(boolean){
@@ -94,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
             Log.v("test_", "onCreateViewHolder")
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.layout, null, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_bmi_show, null, false)
             val ViewHolder = ViewHolder(view)
             return  ViewHolder
         }
@@ -108,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             Log.v("test_", "onBindViewHolder")
             val num = position+1
-            val BMI : TextView = holder.itemView.findViewById(R.id.BMI_)
+            val BMI : TextView = holder.itemView.findViewById(R.id.tv_bmi)
             BMI.setText("第"+num+"次測試："+arrayList[position])
         }
     }
