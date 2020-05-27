@@ -14,20 +14,19 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.view.*
+import kotlinx.android.synthetic.main.activity_view.*
 
-class Activity_BMI : AppCompatActivity(), ViewIterface {
+class Activity_BMI : AppCompatActivity(), BMIContract.View {
 
     var persenter: Presenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.view)
+        setContentView(R.layout.activity_view)
 
         init()
         click()
     }
-
 
     private fun init() {
 
@@ -41,7 +40,7 @@ class Activity_BMI : AppCompatActivity(), ViewIterface {
     private fun click() {
 
         bt_calculate.setOnClickListener(View.OnClickListener {
-            persenter?.detect_number(et_height.text.toString(), et_weight.text.toString())
+            persenter?.calculate_store_bmi(et_height.text.toString(), et_weight.text.toString())
             persenter?.get_bmi()
         })
 
@@ -52,8 +51,7 @@ class Activity_BMI : AppCompatActivity(), ViewIterface {
         })
     }
 
-
-    override fun show_bmi(bmi_array: ArrayList<Double>) {
+    override fun show_bmi(bmi_array:  ArrayList<Double>) {
         val adapter = TestAdaper(bmi_array)
         rv_bmishow.adapter = adapter
 
