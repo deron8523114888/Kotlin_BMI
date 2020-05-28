@@ -1,26 +1,41 @@
 package com.example.myapplication
 
-class Model : BMIContract.Model {
+import android.content.SharedPreferences
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
-    var arrayList: ArrayList<Double> = ArrayList()
+class Model : ModelInterface.Model {
+
+    var arrayList: ArrayList<String> = ArrayList()
+    var sharedPreferences: SharedPreferences? = null
+    var edit: SharedPreferences.Editor? = null
 
 
-    override fun storeBmi(bmi: Double) {
-        arrayList.add(bmi)
+    override fun storeBmi(bmi: String) {
+
+        val time = SimpleDateFormat("MM-dd HH:mm:ss", Locale.TAIWAN).format(Calendar.getInstance().time)
+
+        // 資料存入暫存
+        arrayList.add("【" + time + "】：" + bmi)
+
+        // 資料存入 sharePreeference
+        edit?.putString("BMIData", arrayList.toString())?.apply()
     }
 
+    override fun getBMIArray(onSuccess: (data: String) -> Unit) {
 
-    override fun getBMIArray(onSuccess: (datd: ArrayList<Double>) -> Unit) {
+        // 取出資料
+        val bmiString = sharedPreferences?.getString("BMIData", "").toString()
+        onSuccess(bmiString)
+    }
 
-        // Todo 執行資料存取
+    override fun setSharpreference(sharedPreferences: SharedPreferences) {
+        this.sharedPreferences = sharedPreferences
+        edit = sharedPreferences.edit()
+    }
 
-        //fhjrukygwiehrv
-
-        // Todo 資料存取成功
-        onSuccess(arrayList)
-
-
-        // Todo 資料存取失敗
-
+    override fun resetArraylist(arrayList: ArrayList<String>) {
+        this.arrayList = arrayList
     }
 }
