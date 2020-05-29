@@ -12,12 +12,12 @@ class Presenter(viewInterface: BMIContract.View) : BMIContract.Presenter {
     private val mModel = Model()
 
     @RequiresApi(Build.VERSION_CODES.N)
-    override fun calculate_store_bmi(height: String, weight: String): Boolean {
+    override fun calculate_store_bmi(height: String, weight: String){
 
         // 檢查是否空字串
         if (height.isEmpty() || weight.isEmpty()) {
             mViewInterface.dialog("失敗", "身高或體重為空", "了解")
-            return false
+            return
         }
         // 將使用者輸入的 字串 轉為 Double
         val heightValue = height.toDouble()
@@ -33,7 +33,7 @@ class Presenter(viewInterface: BMIContract.View) : BMIContract.Presenter {
         mModel.storeBmi(bmi2Decimal)
         mViewInterface.dialog("成功", "請於下方查看BMI", "了解")
 
-        return true
+
     }
 
     override fun get_bmi() {  //從 model 拿 bmiArray 給 View

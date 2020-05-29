@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_bmi.*
 
-class BMI_Activity : AppCompatActivity(), BMIContract.View {
+class BMIActivity : AppCompatActivity(), BMIContract.View {
 
     var presenter: Presenter? = null
 
@@ -53,12 +53,11 @@ class BMI_Activity : AppCompatActivity(), BMIContract.View {
         // 計算 BMI 按鈕
         bt_calculate.setOnClickListener(View.OnClickListener {
             // 將用者輸入字串丟入 Presenter 回傳布林值 -> 計算成功與否
-            val boolean = presenter?.calculate_store_bmi(et_height.text.toString(), et_weight.text.toString())
+            presenter?.calculate_store_bmi(et_height.text.toString(), et_weight.text.toString())
 
             // 若計算成功，取得 bmi 值
-            if (boolean!!) {
-                presenter?.get_bmi()
-            }
+            presenter?.get_bmi()    // Todo 輸入錯誤也會執行 需fix
+
         })
 
         // 重設身高、體重按鈕
@@ -66,6 +65,11 @@ class BMI_Activity : AppCompatActivity(), BMIContract.View {
             et_height.text.clear()
             et_weight.text.clear()
         })
+    }
+
+    private fun version_animation(){
+
+        
     }
 
     //顯示 bmi ，每次按下計算按鈕，計算成功後會執行

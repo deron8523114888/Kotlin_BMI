@@ -18,7 +18,7 @@ interface BMIContract {
 
     interface Presenter {
 
-        fun calculate_store_bmi(hheight: String, weight: String): Boolean  //過濾後的數值，開始計算BMI，並丟給 Model 儲存
+        fun calculate_store_bmi(hheight: String, weight: String)  //過濾後的數值，開始計算BMI，並丟給 Model 儲存
 
         fun get_bmi()
 
