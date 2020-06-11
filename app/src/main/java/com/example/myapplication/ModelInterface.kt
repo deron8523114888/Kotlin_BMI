@@ -1,17 +1,13 @@
 package com.example.myapplication
 
-import android.content.SharedPreferences
 
 interface ModelInterface {
 
     interface Model {
 
-        fun storeBmi(bmi: String)
+        fun storeBmi(height : String , weight : String , bmi: String)
 
-        fun getBMIArray(onSuccess: (data: String) -> Unit)
+        fun getBMIArray(onSuccess: (data: ArrayList<BMIBean>) -> Unit)
 
-        fun setSharpreference(sharedPreferences: SharedPreferences)
-
-        fun resetArraylist(arrayList: ArrayList<String>)
     }
 }

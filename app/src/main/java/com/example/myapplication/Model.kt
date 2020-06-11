@@ -1,41 +1,37 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
+import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Model : ModelInterface.Model {
+class Model (): ModelInterface.Model {
 
-    var arrayList: ArrayList<String> = ArrayList()
-    var sharedPreferences: SharedPreferences? = null
-    var edit: SharedPreferences.Editor? = null
+    var arrayList: ArrayList<BMIBean> = ArrayList()
 
 
-    override fun storeBmi(bmi: String) {
+    override fun storeBmi(height : String , weight : String , bmi: String) {
 
-        val time = SimpleDateFormat("MM-dd HH:mm:ss", Locale.TAIWAN).format(Calendar.getInstance().time)
+        // 將資料轉為 data
+        var data = BMIBean(Height = height,Weight = weight ,BMI = bmi)
 
-        // 資料存入暫存
-        arrayList.add("【" + time + "】：" + bmi)
+        // 存入暫存 Arraylist
+        arrayList.add(data)
 
-        // 資料存入 sharePreeference
-        edit?.putString("BMIData", arrayList.toString())?.apply()
+        // 存入 SharePreference
+        SingletonSharePreference.storeBMI(BMIArrayBrean(arrayList))
+
+
     }
 
-    override fun getBMIArray(onSuccess: (data: String) -> Unit) {
+    override fun getBMIArray(onSuccess: (data: ArrayList<BMIBean>) -> Unit) {
 
-        // 取出資料
-        val bmiString = sharedPreferences?.getString("BMIData", "").toString()
-        onSuccess(bmiString)
+        // 從 SharePreference 取出 BMIArray
+        onSuccess(SingletonSharePreference.getBMI().BMIArray)
+
     }
 
-    override fun setSharpreference(sharedPreferences: SharedPreferences) {
-        this.sharedPreferences = sharedPreferences
-        edit = sharedPreferences.edit()
-    }
-
-    override fun resetArraylist(arrayList: ArrayList<String>) {
-        this.arrayList = arrayList
-    }
 }

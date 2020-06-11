@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -8,7 +9,6 @@ import java.math.BigDecimal
 class Presenter(viewInterface: BMIContract.View) : BMIContract.Presenter {
 
     private val mViewInterface = viewInterface
-
     private val mModel = Model()
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -30,30 +30,21 @@ class Presenter(viewInterface: BMIContract.View) : BMIContract.Presenter {
         val bmi2Decimal = android.icu.math.BigDecimal(bmi).setScale(2, BigDecimal.ROUND_HALF_UP).toString()
 
         // 叫 Model 存計算好的數據
-        mModel.storeBmi(bmi2Decimal)
+        mModel.storeBmi(height,weight,bmi2Decimal)
         mViewInterface.dialog("成功", "請於下方查看BMI", "了解")
 
 
     }
 
     override fun get_bmi() {  //從 model 拿 bmiArray 給 View
-        mModel.getBMIArray { data ->
+        mModel.getBMIArray() { data ->
 
-            if (!data.isEmpty()) {
-                // 將從 Model 取得的 String 轉為 Arraylit
-                val str = data.substring(1, data.length - 1)
-                val arrayList = ArrayList<String>(str.split(", "))
-
-                // 更新 Model 暫存的 Arraylist
-                mModel.resetArraylist(arrayList)
-
+            if (data.isNotEmpty()) {
                 // 將 BMI 資料交給 View
-                mViewInterface.show_bmi(arrayList)
+                mViewInterface.show_bmi(data)
             }
         }
     }
 
-    override fun setSharpreference(sharedPreferences: SharedPreferences) {
-        mModel.setSharpreference(sharedPreferences)
-    }
+
 }

@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -23,13 +24,14 @@ android {
         }
 
 
-        flavorDimensions "default"
         free {
-            buildConfigField ("Boolean","isFreeVersion","true")
+            signingConfig debug.signingConfig
+            debuggable(true)
         }
 
         paid {
-            buildConfigField ("Boolean","isFreeVersion","false")
+            signingConfig debug.signingConfig
+            debuggable(true)
         }
     }
 
@@ -47,6 +49,16 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     apply plugin: 'kotlin-android-extensions'
+
+    // gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    // base-adapter
+    implementation 'com.zhy:base-rvadapter:3.0.3'
+
+
+
+
 }
 repositories {
     mavenCentral()

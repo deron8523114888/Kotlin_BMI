@@ -11,7 +11,7 @@
         android:id="@+id/tv_bmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BMI"
+        android:text="@string/title"
         android:textSize="28dp"
         app:layout_constraintBottom_toTopOf="@id/gl_horizon_2"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,7 +22,7 @@
         android:id="@+id/tv_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="身高(公尺)："
+        android:text="@string/bmiHeight"
         android:textSize="26dp"
         app:layout_constraintLeft_toRightOf="@id/gl_vertical_2"
         app:layout_constraintTop_toBottomOf="@id/gl_horizon_2" />
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="體重(公斤)："
+        android:text="@string/bmiWeight"
         android:textSize="26dp"
         app:layout_constraintLeft_toLeftOf="@id/tv_height"
         app:layout_constraintTop_toBottomOf="@id/tv_height" />
@@ -80,7 +80,7 @@
         android:id="@+id/bt_calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="計算BMI"
+        android:text="@string/bt_calculate"
         app:layout_constraintBottom_toTopOf="@id/gl_horizon_6"
         app:layout_constraintLeft_toRightOf="@id/gl_vertical_2" />
 
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:text="Reset"
+        android:text="@string/bt_reset"
         app:layout_constraintBottom_toTopOf="@id/gl_horizon_6"
         app:layout_constraintLeft_toRightOf="@id/bt_calculate" />
 

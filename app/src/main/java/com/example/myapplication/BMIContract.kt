@@ -11,9 +11,12 @@ interface BMIContract {
 
     interface View {
 
-        fun show_bmi(bmi_array: ArrayList<String>) {}
+        fun show_bmi(bmi_array: ArrayList<BMIBean>) {}
 
         fun dialog(title: String, messenger: String, negativeString: String) {}
+
+        fun setSharePreference(func : (sharepreference : SharedPreferences) -> Unit)
+
     }
 
     interface Presenter {
@@ -22,6 +25,5 @@ interface BMIContract {
 
         fun get_bmi()
 
-        fun setSharpreference(sharedPreferences: SharedPreferences) {}
     }
 }

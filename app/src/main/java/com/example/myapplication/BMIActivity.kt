@@ -2,20 +2,32 @@ package com.example.myapplication
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.zhy.adapter.recyclerview.CommonAdapter
+import com.zhy.adapter.recyclerview.base.ViewHolder
+import com.zhy.baseadapter_recyclerview.BuildConfig
 import kotlinx.android.synthetic.main.activity_bmi.*
 
 class BMIActivity : AppCompatActivity(), BMIContract.View {
 
     var presenter: Presenter? = null
+    val context = this
+
+
 
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -23,20 +35,20 @@ class BMIActivity : AppCompatActivity(), BMIContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bmi)
 
+
+
         init()
         click()
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun init() {
 
         // 初始化 Presenter 對象
         presenter = Presenter(this)
 
-        // 取得 sharedPreference 裡面 BMIData 檔案對象
-        val sharedPreferences = getSharedPreferences("BMIData", Context.MODE_PRIVATE)
-
-        // 將 sharePreference 丟入 Presenter
-        presenter?.setSharpreference(sharedPreferences)
+        // 初始化 SharePreference "BMIData" 倉庫
+        SingletonSharePreference.getShare(context)
 
         // 設置 rv 的 linearLayoutManager
         val linearLayoutManager = LinearLayoutManager(this)
@@ -56,7 +68,7 @@ class BMIActivity : AppCompatActivity(), BMIContract.View {
             presenter?.calculate_store_bmi(et_height.text.toString(), et_weight.text.toString())
 
             // 若計算成功，取得 bmi 值
-            presenter?.get_bmi()    // Todo 輸入錯誤也會執行 需fix
+            presenter?.get_bmi()    // Todo 輸入錯誤的身高體重也會執行 需fix
 
         })
 
@@ -67,15 +79,10 @@ class BMIActivity : AppCompatActivity(), BMIContract.View {
         })
     }
 
-    private fun version_animation(){
-
-        
-    }
-
     //顯示 bmi ，每次按下計算按鈕，計算成功後會執行
-    override fun show_bmi(bmi_array: ArrayList<String>) {
+    override fun show_bmi(bmi_array: ArrayList<BMIBean>) {
 
-        val adapter = TestAdaper(bmi_array)
+        val adapter = CommonAdaper(this,bmi_array)
         rv_bmishow.adapter = adapter
         super.show_bmi(bmi_array)
     }
@@ -96,6 +103,11 @@ class BMIActivity : AppCompatActivity(), BMIContract.View {
         super.dialog(title, messenger, negativeString)
     }
 
+    override fun setSharePreference(func: (sharepreference: SharedPreferences) -> Unit) {
+        val sharedPreferences = getSharedPreferences("BMIData", Context.MODE_PRIVATE)
+        func(sharedPreferences)
+    }
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val manager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         if (event.action == MotionEvent.ACTION_DOWN) {
@@ -106,4 +118,5 @@ class BMIActivity : AppCompatActivity(), BMIContract.View {
         }
         return super.onTouchEvent(event)
     }
+
 }
