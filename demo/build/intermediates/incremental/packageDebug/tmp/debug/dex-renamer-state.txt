@@ -1,0 +1,4 @@
+#Tue Jun 16 11:37:42 CST 2020
+base.0=C\:\\Users\\RSGAMES-2\\AndroidStudioProjects\\BMI_Kotlin\\demo\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

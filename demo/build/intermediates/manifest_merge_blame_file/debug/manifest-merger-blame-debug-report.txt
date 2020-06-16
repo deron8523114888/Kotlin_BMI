@@ -1,0 +1,429 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.hwhard_kolin"
+4    android:versionCode="364"
+5    android:versionName="3.6.4" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="9"
+8-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="26" />
+9-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml
+10    <!-- Required -->
+11    <permission
+12        android:name="com.example.hwhard_kolin.permission.JPUSH_MESSAGE"
+12-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:7:9-65
+13        android:protectionLevel="signature" />
+13-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:8:9-44
+14
+15    <!-- Required  一些系统要求的权限，如访问网络等 -->
+16    <uses-permission android:name="com.example.hwhard_kolin.permission.JPUSH_MESSAGE" />
+16-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:11:22-78
+17    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+17-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:12:5-79
+17-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:12:22-76
+18    <uses-permission android:name="android.permission.INTERNET" />
+18-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:13:5-67
+18-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:13:22-64
+19    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+19-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:14:5-75
+19-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:14:22-72
+20    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+20-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:15:5-81
+20-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:15:22-78
+21    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+21-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:16:5-80
+21-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:16:22-77
+22    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+22-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:17:5-84
+22-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:17:22-81
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:18:5-79
+23-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:18:22-76
+24    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+24-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:19:5-76
+24-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:19:22-73
+25
+26    <!-- 华为角标 -->
+27    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+27-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:22:5-23:77
+27-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:23:9-75
+28
+29    <!-- Optional for location -->
+30    <uses-permission android:name="android.permission.VIBRATE" />
+30-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:27:5-66
+30-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:27:22-63
+31    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+31-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:28:5-78
+31-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:28:22-75
+32    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+32-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:29:5-81
+32-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:29:22-78
+33    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+33-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:30:5-76
+33-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:30:22-73
+34    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+34-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:31:5-79
+34-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:31:22-76
+35    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- Android Q后台定位权限 -->
+35-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:32:5-85
+35-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:32:22-82
+36    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+36-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:33:5-89
+36-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:33:22-86
+37    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+37-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:34:5-79
+37-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:34:22-76
+38    <uses-permission android:name="android.permission.GET_TASKS" />
+38-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:35:5-68
+38-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:35:22-65
+39
+40    <application
+40-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:37:5-216:19
+41        android:name="com.example.jpushdemo.ExampleApplication"
+41-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:41:9-64
+42        android:allowBackup="false"
+42-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:39:9-36
+43        android:debuggable="true"
+44        android:icon="@drawable/ic_launcher"
+44-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:38:9-45
+45        android:label="@string/app_name"
+45-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:40:9-41
+46        android:testOnly="true" >
+47
+48        <!-- For test only 测试的主程序 -->
+49        <activity
+49-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:44:9-51:20
+50            android:name="com.example.jpushdemo.MainActivity"
+50-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:45:13-62
+51            android:label="@string/app_name" >
+51-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:46:13-45
+52            <intent-filter>
+52-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:47:13-50:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:48:17-69
+53-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:48:25-66
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:49:17-77
+55-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:49:27-74
+56            </intent-filter>
+57        </activity>
+58        <!-- For test only 测试高级功能 -->
+59        <activity
+59-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:53:8-115
+60            android:name="com.example.jpushdemo.PushSetActivity"
+60-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:53:18-70
+61            android:label="@string/app_name" />
+61-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:53:71-103
+62        <!-- For test only 测试设置 -->
+63        <activity
+63-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:55:8-115
+64            android:name="com.example.jpushdemo.SettingActivity"
+64-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:55:18-70
+65            android:label="@string/app_name" />
+65-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:55:71-103
+66        <!-- For test only 测试状态通知栏，需要打开的Activity -->
+67        <activity
+67-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:57:9-62:20
+68            android:name="com.example.jpushdemo.TestActivity"
+68-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:57:19-68
+69            android:exported="false" >
+69-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:57:69-93
+70            <intent-filter>
+70-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:58:13-61:29
+71                <action android:name="jpush.testAction" />
+71-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:59:17-59
+71-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:59:25-56
+72
+73                <category android:name="jpush.testCategory" />
+73-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:60:17-63
+73-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:60:27-60
+74            </intent-filter>
+75        </activity>
+76
+77        <!-- Rich push 核心功能 since 2.0.6 -->
+78        <activity
+78-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:65:9-69:20
+79            android:name="cn.jpush.android.ui.PopWinActivity"
+79-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:66:13-62
+80            android:exported="false"
+80-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:68:13-37
+81            android:theme="@style/MyDialogStyle" >
+81-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:67:13-49
+82        </activity>
+83
+84        <!-- Required SDK核心功能 -->
+85        <activity
+85-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:72:9-82:20
+86            android:name="cn.jpush.android.ui.PushActivity"
+86-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:73:13-60
+87            android:configChanges="orientation|keyboardHidden"
+87-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:74:13-63
+88            android:exported="false"
+88-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:76:13-37
+89            android:theme="@android:style/Theme.NoTitleBar" >
+89-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:75:13-60
+90            <intent-filter>
+90-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:77:13-81:29
+91                <action android:name="cn.jpush.android.ui.PushActivity" />
+91-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:78:17-75
+91-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:78:25-72
+92
+93                <category android:name="android.intent.category.DEFAULT" />
+93-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:79:17-76
+93-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:79:27-73
+94                <category android:name="com.example.hwhard_kolin" />
+94-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:80:27-58
+95            </intent-filter>
+96        </activity>
+97
+98        <!-- Required SDK 核心功能 -->
+99        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+100        <service
+100-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:86:9-95:19
+101            android:name="cn.jpush.android.service.PushService"
+101-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:87:13-64
+102            android:process=":pushcore" >
+102-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:88:13-40
+103            <intent-filter>
+103-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:89:13-94:29
+104                <action android:name="cn.jpush.android.intent.REGISTER" />
+104-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:90:17-75
+104-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:90:25-72
+105                <action android:name="cn.jpush.android.intent.REPORT" />
+105-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:91:17-73
+105-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:91:25-70
+106                <action android:name="cn.jpush.android.intent.PushService" />
+106-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:92:17-78
+106-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:92:25-75
+107                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+107-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:93:17-76
+107-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:93:25-73
+108            </intent-filter>
+109        </service>
+110
+111        <!-- since 3.0.9 Required SDK 核心功能 -->
+112        <provider
+113            android:name="cn.jpush.android.service.DataProvider"
+113-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:100:13-65
+114            android:authorities="com.example.hwhard_kolin.DataProvider"
+114-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:99:13-64
+115            android:exported="false"
+115-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:102:13-37
+116            android:process=":pushcore" />
+116-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:101:13-40
+117
+118        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+119        <!-- 若不启用该功能可删除该组件，或把 enabled 设置成 false ；App 不会被其他 App 拉起，但会拉起其他的 App。 -->
+120        <service
+120-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:107:9-116:19
+121            android:name="cn.jpush.android.service.DaemonService"
+121-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:108:13-66
+122            android:enabled="true"
+122-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:109:13-35
+123            android:exported="true" >
+123-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:110:13-36
+124            <intent-filter>
+124-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:111:13-114:29
+125                <action android:name="cn.jpush.android.intent.DaemonService" />
+125-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:112:17-80
+125-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:112:25-77
+126
+127                <category android:name="com.example.hwhard_kolin" />
+127-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:80:27-58
+128            </intent-filter>
+129        </service>
+130
+131        <!-- 可选，如果使用静态Activity方式拉起，该组件必须声明 -->
+132        <activity
+132-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:119:9-128:20
+133            android:name="cn.jpush.android.service.DActivity"
+133-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:119:19-68
+134            android:enabled="true"
+134-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:120:13-35
+135            android:exported="true"
+135-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:121:13-36
+136            android:taskAffinity="jpush.custom"
+136-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:123:13-48
+137            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+137-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:122:13-72
+138            <intent-filter>
+138-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:124:13-127:29
+139                <action android:name="cn.jpush.android.intent.DActivity" />
+139-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:125:17-75
+139-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:125:25-73
+140
+141                <category android:name="com.example.hwhard_kolin" />
+141-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:80:27-58
+142            </intent-filter>
+143        </activity>
+144
+145        <!-- since 3.1.0 Required SDK 核心功能 -->
+146        <provider
+147            android:name="cn.jpush.android.service.DownloadProvider"
+147-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:133:13-69
+148            android:authorities="com.example.hwhard_kolin.DownloadProvider"
+148-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:132:13-68
+149            android:exported="true" />
+149-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:134:13-36
+150
+151        <!-- Required SDK核心功能 -->
+152        <receiver
+152-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:138:9-156:20
+153            android:name="cn.jpush.android.service.PushReceiver"
+153-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:139:13-65
+154            android:enabled="true" >
+154-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:140:13-35
+155            <intent-filter android:priority="1000" >
+155-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:141:13-144:29
+155-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:141:28-51
+156                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
+156-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:142:17-94
+156-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:142:25-91
+157                <category android:name="com.example.hwhard_kolin" />
+157-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:80:27-58
+158            </intent-filter>
+159            <intent-filter>
+159-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:145:13-148:29
+160                <action android:name="android.intent.action.USER_PRESENT" />
+160-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:146:17-77
+160-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:146:25-74
+161                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+161-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:147:17-79
+161-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:147:25-76
+162            </intent-filter>
+163            <!-- Optional -->
+164            <intent-filter>
+164-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:150:13-155:29
+165                <action android:name="android.intent.action.PACKAGE_ADDED" />
+165-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:151:17-78
+165-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:151:25-75
+166                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+166-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:152:17-80
+166-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:152:25-77
+167
+168                <data android:scheme="package" />
+168-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:154:17-50
+168-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:154:23-47
+169            </intent-filter>
+170        </receiver>
+171
+172        <!-- Required SDK核心功能 -->
+173        <receiver
+173-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:159:9-99
+174            android:name="cn.jpush.android.service.AlarmReceiver"
+174-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:159:19-72
+175            android:exported="false" />
+175-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:159:73-97
+176
+177        <!-- 3.5.0新增，用于定时展示功能 -->
+178        <receiver
+178-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:162:9-103
+179            android:name="cn.jpush.android.service.SchedulerReceiver"
+179-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:162:19-76
+180            android:exported="false" />
+180-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:162:77-101
+181
+182        <!-- User defined.  For test only  用户自定义的广播接收器 -->
+183        <receiver
+183-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:165:9-176:20
+184            android:name="com.example.jpushdemo.MyReceiver"
+184-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:166:13-60
+185            android:enabled="true" >
+185-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:167:13-35
+186            <intent-filter>
+186-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:168:13-175:29
+187                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+187-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:169:17-79
+187-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:169:25-76
+188                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+188-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:170:17-83
+188-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:170:25-80
+189                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+189-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:171:17-88
+189-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:171:25-85
+190                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+190-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:172:17-86
+190-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:172:25-83
+191                <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+191-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:173:17-77
+191-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:173:25-74
+192                <category android:name="com.example.hwhard_kolin" />
+192-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:80:27-58
+193            </intent-filter>
+194        </receiver>
+195
+196        <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
+197        <!-- since 3.3.0 接收JPush相关事件 -->
+198        <receiver android:name="com.example.jpushdemo.PushMessageReceiver" >
+198-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:182:9-187:20
+198-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:182:19-75
+199            <intent-filter>
+199-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:183:13-186:29
+200                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+200-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:184:17-82
+200-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:184:25-79
+201
+202                <category android:name="com.example.hwhard_kolin" />
+202-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:80:27-58
+203            </intent-filter>
+204        </receiver>
+205
+206        <!-- since 3.3.0 Required SDK核心功能 -->
+207        <activity
+207-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:190:9-199:20
+208            android:name="cn.jpush.android.service.JNotifyActivity"
+208-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:191:13-68
+209            android:exported="false"
+209-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:192:13-37
+210            android:taskAffinity="jpush.custom"
+210-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:193:13-48
+211            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+211-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:194:13-72
+212            <intent-filter>
+212-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:195:13-198:29
+213                <action android:name="cn.jpush.android.intent.JNotifyActivity" />
+213-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:196:17-82
+213-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:196:25-79
+214
+215                <category android:name="com.example.hwhard_kolin" />
+215-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:80:27-58
+216            </intent-filter>
+217        </activity>
+218
+219        <!-- since 3.3.0 Required SDK 核心功能 -->
+220        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+221        <!-- User defined.  For test only 继承自cn.jpush.android.service.JCommonService -->
+222        <service
+222-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:204:9-209:19
+223            android:name="com.example.jpushdemo.PushService"
+223-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:204:18-66
+224            android:process=":pushcore" >
+224-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:205:13-40
+225            <intent-filter>
+225-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:206:13-208:29
+226                <action android:name="cn.jiguang.user.service.action" />
+226-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:207:17-73
+226-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:207:25-70
+227            </intent-filter>
+228        </service>
+229        <!-- since 3.5.6 新增华硕通道 -->
+230        <receiver android:name="cn.jpush.android.asus.AsusPushMessageReceiver" />
+230-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:211:9-91
+230-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:211:19-79
+231        <!-- Required  . Enable it you can get statistics data with channel -->
+232        <meta-data
+233            android:name="JPUSH_CHANNEL"
+233-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:213:20-48
+234            android:value="default_developer" />
+234-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:213:49-81
+235        <meta-data
+236            android:name="JPUSH_APPKEY"
+236-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:214:20-47
+237            android:value="911664b271d1948a3a670585" /> <!-- </>值来自开发者平台取得的AppKey -->
+237-->C:\Users\RSGAMES-2\AndroidStudioProjects\BMI_Kotlin\demo\src\main\AndroidManifest.xml:214:48-79
+238
+239    </application>
+240
+241</manifest>

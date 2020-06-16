@@ -5,4 +5,5 @@
     <string name="bt_calculate">計算</string>
     <string name="bt_reset">重設</string>
     <string name="bt_paid_function">付費功能</string>
+    <string name="title">title</string>
 </resources>
